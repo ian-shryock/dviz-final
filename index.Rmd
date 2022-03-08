@@ -1,7 +1,7 @@
 ---
-title: "proposal_explorations"
+title: "Final Project"
 author: "Ian, Dillon, Futing"
-date: "1/19/2022"
+date: "3/8/2022"
 output:
   flexdashboard::flex_dashboard:
     theme: flatly
@@ -863,7 +863,7 @@ map <- left_join(oregon_quant, pal) %>%
   scale_fill_identity()+
   scale_color_identity()+
    theme_void()+
-  labs(title = "Southeastern Oregon Needs Increased SpEd Resources") +
+  labs(title = "SpEd Spending by Median Income") +
   theme(plot.title = element_text(size = 20, face = "bold", hjust = .2))
 
 legend <-
@@ -894,7 +894,7 @@ Visualization 1
 ### Old Nationwide
 
 
-```{r fig.width=my_width, fig.height=my_height}
+```{r fig.show='asis'}
 ian_old1
 
 ian_old2
@@ -903,7 +903,7 @@ ian_old2
 Initially, I wanted to provide more granular data about SpEd populations and spending. However, it appeared that there was a wide variation of state reporting quality.
 
 ### Old Oregon
-```{r fig.width=my_width, fig.height=my_height}
+```{r fig.show='asis'}
 ian_old3
 
 ian_old4
@@ -914,13 +914,13 @@ I decided to hone in on Oregon and created a series of plots that didn't quite c
 
 ### Final
 
-```{r  fig_height = 8, fig_width = 8}
+```{r  fig.show='asis'}
 
 
 
 ggdraw() +
   draw_plot(map , 0.1, 0, 1, 1) +
-  draw_plot(legend, -0.05, 0, 0.3, 0.3)
+  draw_plot(legend, -0.02, 0, 0.3, 0.3)
 ```
 <br>
 Despite the straightforward title, there's a lot of interesting information to unpack here. While the southeastern portion of Oregon is the least well funded, the counties where SpEd funding quantiles are below the median income and vice versa.
